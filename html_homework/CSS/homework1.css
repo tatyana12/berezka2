@@ -1,0 +1,176 @@
+
+  html {
+    
+    background: url(../images/sky.png);
+  
+}
+
+
+
+body{
+     background: url(../images/sky.png);	
+    margin-left: auto;
+    margin-right: auto;
+    width:500px;
+    color: white;
+   
+  
+}
+
+
+h1{
+    font-size: 32px;
+    font-family: 'Cinzel', serif;
+    color: yellow;
+    text-align: center;
+    text-shadow: #eb7209 1px 1px 1px;
+
+    
+}
+.title{
+    
+    padding-top: 100px;
+    font-size: 20px;
+    padding-bottom: 50px;
+
+}
+.assignment{
+    
+    text-align: center;
+    padding-bottom: 20px;
+   
+}
+.contact, .meetup{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+
+
+h2{
+    font-size:32px;
+    color:#e309eb;
+     text-transform: uppercase;
+  
+    font-family: 'Righteous';
+    text-align: center;
+    text-shadow: white 1px 1px 1px;
+    margin-top: -20px;
+    margin-bottom: -20px;
+
+}
+h3{
+    
+    color:white;
+    text-align:center;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    
+}
+
+.aboutable{
+    margin-left: auto;
+    margin-right: auto;
+    
+    width:450px;
+    height: 200px;
+    position: relative;
+    
+   
+      border: 3px solid white;
+    
+}
+.goodlinks{
+    
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+   
+   
+   
+    font-size: 14px;
+}
+
+
+.myphoto{
+    float:right;
+    top: 20px;
+    left: 15px;
+    width: 150px;
+    position: absolute;
+}
+.aboutme{
+    text-align: justify;
+  float:left;
+    font-size:14px;
+    position: absolute;
+    
+    top: 15px;
+    right: 15px;
+    
+    width: 250px;
+}
+.aboutmemore{
+    text-align: justify;
+    width: 450px;
+     margin-left: auto;
+    margin-right: auto;
+    
+}
+p{
+    
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+
+.headmenu{
+    
+     text-align: right;
+    margin-right: 40px;
+}
+ 
+a.youtube:hover{
+    color:red;
+}
+
+a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-family: 'Ibarra Real Nova', cursive;  
+}
+
+
+.CCSF{
+    margin-top: -10px; 
+    text-align: justify;
+    width: 450px;
+     margin-left: auto;
+    margin-right: auto;
+}
+
+.ccsflink{
+    text-align: center;
+    font-size: 16px;
+    
+}
+a.ccsflink:hover{
+    color: deeppink;
+}
+.ccsfp{
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+a.menu:hover {
+    background: url(../images/star.png) no-repeat;
+   padding-left: 30px;
+    text-shadow: white 2px 2px 2px;   
+}
+
+a:hover{
+    text-shadow: white 2px 2px 2px; 
+}
+
+

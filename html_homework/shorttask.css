@@ -1,0 +1,100 @@
+
+:root{
+    
+    --color: blue;
+    --background: lightblue;
+    --content_font: maroon;
+}
+
+.grid-area-1 { 
+   grid-area: header;
+   height: 150px;
+   background-color: var(--background);
+   color: var(--color);
+} 
+
+.grid-area-2 { 
+    
+   grid-area: menu;
+   height: auto; 
+   width: 200px;
+   color: var(--content_font);
+  
+} 
+
+.grid-area-3 { 
+    grid-area: content;
+    height: auto;
+  
+    
+   color:  var(--content_font);
+} 
+
+.grid-area-4 { 
+    grid-area:footer;
+    height: 100px;
+    background: var(--background);
+    color: var(--color);
+} 
+
+.grid { 
+    display:grid;
+    grid-template-areas: 'header header'
+        'menu content'
+        'footer footer';
+   min-width: 860px;
+width: 80%;
+		   margin: auto;
+          
+   } 
+h1{
+    text-align: center;
+  line-height: 100px;
+    
+}
+
+#menu ul{
+    list-style-type: none; 
+}
+#menu li{
+        width: 100px;
+        height: 50px;
+       
+     line-height: 47px;
+     
+     border-radius: 15px;
+     font-size: 16px;
+     margin-right:5px;
+    
+    }
+#menu a{
+        text-decoration: none;
+        color: maroon;
+    }
+
+
+#content{
+    
+  padding:0 20px 0 20px;
+    text-align: justify;
+    line-height: 30px;
+}
+
+
+picture{
+    float: right;
+    text-align: center;
+    margin: 20px 20px 20px 20px;
+}
+#kitten{
+    
+    font-size: 0.7em;
+    font-style: italic;
+    
+}
+#header{
+    text-align: center;
+    line-height: 100px;
+    
+    
+}

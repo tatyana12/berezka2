@@ -1,0 +1,103 @@
+body{
+    
+    background-color:yellow;
+    
+}
+h1{
+    
+    color:red;
+    text-align: center;
+}
+
+
+p::first-letter {
+    font-size: 40pt; 
+    font-weight: bold; 
+    font-style: italic; 
+}
+
+h2{
+    color: blue; 
+    text-align: right; 
+    font-style: italic; 
+}
+
+h2:last-of-type{
+    
+    font-size: 30pt;
+}
+
+h3{
+    text-align: right;
+    color: red;
+}
+.column{ 
+    font-weight: bold; 
+    text-align: center; }
+
+table{
+    border-spacing: 5px; 
+    background: cyan;
+    text-align: left ;
+    padding: 10px;
+    line-height: 40px;
+    animation-name: tableAnimation;
+    animation-duration: 5s;
+
+    animation-iteration-count:1; 
+    animation-direction: alternate;
+    animation-fill-mode:forwards;
+    animation-delay: 2s;
+   
+
+}
+.red{
+    color: red;
+}
+a{
+    color: darkcyan;
+}
+
+a:link{
+    color:red;
+}
+a:visited {
+    color: white; 
+}
+
+
+  @keyframes tableAnimation {
+  from {background-color: cyan;}
+  to {background-color: green;
+    color: white;}
+}
+
+
+.hello_world{
+  text-align: center;
+  font-size:24pt;
+  width: 200px;
+  height: 40px;
+  background-color: red;
+  position: relative;
+  animation-name: sentence;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+ 
+}
+
+@keyframes sentence {
+  0%   {background-color:red; left:0px; top:0px;}
+  50%  {background-color:greenyellow; left:calc(100% - 200px); top:0px;}
+  100% {background-color:orange; left:0px; top:0px;}
+}
+
+.back_to_pages{
+    
+    text-align: center;
+  
+    
+    
+}
+
