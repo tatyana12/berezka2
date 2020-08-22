@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+       <title>CNIT 133 Homework 2 Extra Credit</title>
+        
+        <meta name="description" content="CCSF's Spring 2020 CNIT 133 Homework 2 extra credit JavaScript  JQuerry basic functions on input values Yulia Berezina currency exchange;">
+        
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="CSS/hw.css">
+        
+       
+        
+        
+    </head>
+    
+    <body>
+        
+        <script> 
+        function ajaxFunction(){
+           
+                var xmlHttp;
+                try{
+                    xmlHttp = new XMLHttpRequest();
+                }
+                catch(e)
+                {
+                    try{
+                        xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                        
+                    }
+                    catch(e){
+                        try {
+                            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+                        catch(e){
+                            alert("Your browser does not support AJAX!");
+                            return false;
+                        }
+                    }
+                }
+                
+                xmlHttp.onreadystatechange = function (){
+                    
+                    if(xmlHttp.readyState==4){
+                        document.myForm.time.value=xmlHttp.responseText;
+                    }
+                }
+                xmlHttp.open("GET", "serverTime.php",true);
+                xmlHttp.send(null);
+                
+            }
+            
+            
+        </script>
+    
+    
+    <h2> Name and time</h2>
+        <form name="myForm">
+        Name:<input type="text" id="name" onChange="ajaxFunction();">
+        Time:<input type="text" name="time"></form>
+        
+        
+    </body>
+</html>

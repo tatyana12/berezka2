@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+       <title>CNIT 133 Homework 2 Extra Credit</title>
+        
+        <meta name="description" content="CCSF's Spring 2020 CNIT 133 Homework 2 extra credit JavaScript  JQuerry basic functions on input values Yulia Berezina currency exchange;">
+        
+        <meta charset="utf-8">
+        
+        
+    <link rel="stylesheet" href="CSS/hw.css">
+        
+        <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+        
+        <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
+        
+        <style>
+            div.continue
+            {display:none;}
+            
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+     
+        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+       
+  
+       <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+   
+        
+       
+        
+      
+    </head>
+       <body>
+           
+           <h2>EXTRA CREDIT</h2>
+           <br><br>
+          
+           
+           
+          
+    
+    
+    <script>
+        console.log("t");
+    $(document).ready(function(){
+        $("#amounts").click(function(){
+            $(this).css('background-color','red');
+        });
+         $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+});
+    
+        
+    </script>
+    
+
+<script>
+  
+    $(document).ready(function(){
+    $("#myform").validate({
+        rules:
+        {
+            amounts:{required: true, number:true, min: 0},
+            
+        }
+        
+    });
+    });
+    console.log("yes");
+    
+    
+    function process(){ 
+        
+        
+         if($("#myform").valid())
+                        {
+       
+       
+        var r1, r2, r3, r4, v5, v1, v2, v3,v4, v5, amount;
+        
+        r1 = parseFloat(document.forms["myform"].elements["rateHKD"].value);
+        r2 = parseFloat(document.forms["myform"].elements["rateCD"].value);
+          r3 = parseFloat(document.forms["myform"].elements["rateEU"].value);
+         r4 = parseFloat(document.forms["myform"].elements["rateJV"].value);
+        r5 = parseFloat(document.forms["myform"].elements["rateMP"].value);
+        
+        
+        
+        
+        
+        amount = parseFloat(document.getElementById("amounts").value);
+       
+        
+        v1 = r1*amount;
+        v2=r2*amount;
+        v3=r3*amount;
+        v4 = r4*amount;
+        v5 = r5*amount;
+        
+        
+        document.forms["myform"].elements["valueHKD"].value = v1.toFixed(2);
+        
+        document.forms["myform"].elements["valueCD"].value = v2.toFixed(2);
+        document.forms["myform"].elements["valueEU"].value = v3.toFixed(2);
+         document.forms["myform"].elements["valueJV"].value = v4.toFixed(2);
+        document.forms["myform"].elements["valueMP"].value = v5.toFixed(2);
+    
+    }
+    }
+    
+    
+    
+    </script>
+
+   
+   
+
+
+    
+    <div id="flip" class="flip">Click to Show/Hide Instructions</div><br>
+<div id="panel" class="panel">The foreign exchange rates in July 2019. Enter a dollar amount in the table below to see the corresponding foreign exchange values</div><br><br>
+
+    <div>
+        <form name = "myform" id="myform">
+            <table class="rate">
+                <tbody>
+                    <tr><th colspan = '3'>Monetary Exchange Rates</th></tr>
+                    <tr><th>Currency</th><th>Rate</th><th>Value</th></tr>
+                    
+                    <tr>
+                        <td>Hong 
+                        Kong Dollar</td>
+                        <td><input type="text" value="78.00" name = "rateHKD" size = "10"></td>
+                        <td><input type = "text" size = "20" name = "valueHKD" readonly></td>
+                    </tr>
+                     
+                    
+                  <tr><td>Canadian Dollar</td>
+                        <td><input type="text" value="13.10" size = "10" name = "rateCD"></td>
+                        <td><input type = "text" size = "20" name = "valueCD" readonly></td>
+                    </tr>
+                    
+                     <tr><td>Euro</td>
+                        <td><input type="text" value="0.89" name = "rateEU" size = "10"></td>
+                        <td><input type = "text" size = "20" name = "valueEU" readonly></td></tr>
+                    
+                    <tr><td>Japanese Yen</td>
+                        <td><input type="text" value="1083.80" name = "rateJV" size = "10"></td>
+                        <td><input type = "text" size = "20" name = "valueJV" readonly></td></tr>
+                    
+                    <tr><td>Mexican Peso</td>
+                        <td><input type="text" value="191.10" name = "rateMP" size = "10"></td>
+<td><input type = "text" size = "20" name = "valueMP" readonly></td></tr>
+                    
+                    
+                    <tr><th colspan="2">Enter Amount of U.S. Dollars</th>
+                         
+                         <td><input type="number" id = "amounts" name = "amounts" class ="r" autofocus></td></tr>
+                  
+    
+                    
+                </tbody>
+            </table>
+            <br>
+            <input type = "button" value = "Calculate" onclick = "process()">
+            <input type = "reset" value = "Reset" onclick="window.location.reload();">
+        </form>
+    </div>
+           
+           
+   <div class="arrows">
+        <a class="arrowright" href="hw2part4.html"><img src="images/arrowleft.png" alt="arrows to the left page"></a>
+    
+            
+    </div>
+    
+    <a href = "hw.html"><h3>Home</h3></a>
+        <a href = "hw2.html"><h3>Homework 2</h3></a>
+        
+     </body>
+</html>

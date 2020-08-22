@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+       <title>CNIT 133 Homework 3</title>
+        
+        <meta name="description" content="CNIT 133 homework 3 Yulia Berezina CCSF spring semestr using Array Loop While and For statement pulldown menu">
+        
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="CSS/hw.css">
+        
+        <!--GOOGLE FONTS-->
+        
+        <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
+        
+        <!--Jquery library for accordion-->
+        
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ 
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        
+        
+        <script data-ad-client="ca-pub-9924236306896960" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        
+         <!--style for hw3p2 counting interest-->
+        
+        <style>
+            #adds{
+                display:none;
+            }
+            
+        .hw4p2 tr:nth-child(even) {
+    background-color: orange;
+}
+        .hw4p2 tr:nth-child(odd){
+     background-color: yellow;
+            }
+            .hw4p2{
+                width: 200px;
+            }
+           
+ #instruction, #state_info
+            {display:none;}
+            
+            
+        </style>
+        
+        
+        
+        
+        
+        <!--# script for accordion-->
+        <script> 
+            
+  $(function() {
+    $("#accordion").accordion({
+        
+      heightStyle:"content",
+		collapsible:true,
+		
+  } );
+      var hash = window.location.hash;
+	var anchor = $('a[href$="'+hash+'"]');
+	if (anchor.length > 0){
+		anchor.click();
+	}
+            
+           
+            });
+  </script> 
+        
+        
+        
+        
+        
+        
+        <!--Jquery for hiding instruction-->
+        <script>
+       
+    $(document).ready(function(){
+        $("#click").click(function(){
+    $("#instruction").slideToggle("slow");
+  });
+       
+});
+</script>
+        
+        
+        
+        <!--script to drugg -->
+        <script>
+$(function() {
+   $( "#draggable, #draggable1" ).draggable();
+});
+</script>
+        <!--fo extra credit line spacing -->
+        <style>
+           #ec{
+               line-height: 0.6;
+               
+           }
+           
+           
+        </style>
+        
+    
+        <!--Jquery VALIDATION -->
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+      
+        
+        
+  </head>
+    
+    
+    
+    
+    
+    <body>
+        
+   <h1>Homework 3</h1>
+       
+<div id="accordion"> 
+        
+                     <h2><a href="#hw3p1" id="hw3p1">Part 1 Calculating</a> </h2><div>
+        
+                                                  <div>
+                <h4 id="draggable">Part 1a Calculate product and sum using for statement</h4>
+                <p>Calculates the product and sum of every fourth integer from 5 to 21 inclusive</p>
+    
+<script>
+       var sum=0;
+        var prod=1;
+     
+        for(i=5; i<=21; i+=4){
+          sum+=i;
+            prod*=i;
+        }
+        
+        document.write("The sum of the integers of every fourth integer from 5 to 21 inclusive is "+ sum+" .<br />");
+        document.write("The product of the integers of every fourth integer from 5 to 21 inclusive is "+ prod.toLocaleString()+" .<br />");
+</script>
+                
+                 <h4 id="draggable1">Part 1b Calculate product and sum using  while or do while statement</h4>
+                 <p>Calculates the product and sum of every third integer from 3 to 21 inclusive</p>
+    
+<script>
+       
+        var i=3;
+        var sumwhile=0;
+        var prodwhile=1;
+        while(i<=21){
+            
+           sumwhile+=i;
+           prodwhile*=i;
+            i+=3
+            
+        }
+       
+       document.write("The sum of the integers of every third integer from 3 to 21 inclusive is "+ sumwhile+" .<br />");
+       document.write("The product of the integers of every third integer from 3 to 21 inclusive is "+ prodwhile.toLocaleString()+" .<br />");
+    
+    </script>
+    </div>
+                                                </div>
+    
+    
+    <h2><a href="#hw3p2" id="hw3p2">Part 2 Calculaitng interest</a></h2><div>
+
+                                                 <div><div id="table"></div>
+     <script>
+                
+                var year, amount, i, p, r5, g, str="";
+            p=1000;
+         var myObj={
+             
+             style:"currency",
+             currency:"USD"
+         }
+        
+            for ( var r=0.05; r<=0.07; r+=0.01){
+                
+                 str+="<table  class='hw4p2' style='border-collapse:collapse'><tr style='background: maroon; color:white'><th>Year</th><th>Amount</th><th>Rate</th></tr>";
+                 
+            for(var i=1; i<=10; i++){
+                amount=p*Math.pow((1+r), i);
+                am=amount.toLocaleString('en-US', myObj);
+            
+               str += "<tr  ><td>"+i+" "+"</td><td>"+am+" "+"</td><td>"+r.toFixed(2)+" "+"</tr>";
+                
+                
+               
+            
+               document.getElementById("table").innerHTML=str;
+                
+               
+            }
+                str+="</table>";
+                str+="<br>";
+                
+            }
+   
+        </script></div>
+                                                        </div>
+    
+    
+    <h2><a href="#hw3p3" id="hw3p3">Part 3 Pulldown menu</a></h2><div>
+            
+                                                   <div>
+    
+    
+            <h4>Choose your destination (using onChange event handler)</h4>
+                                                       
+    <!--first form-->                                                   
+    <form>
+            
+        <select name="destination" onChange="gotopage(this.form);">
+                <option value="">Choose Destination:</option>
+            <option value="http://www.w3.org/">W3C</option>
+            <option value="http://www.facebook.org/">Facebook</option>
+                <option value="http://www.ccsf.edu">CCSF</option>
+            <option value="https://www.usa.gov/coronavirus">Information about Coronovirus</option>
+            </select>
+       
+        
+        <script>
+                       
+                       function gotopage(myForm){
+                           var myDestination = myForm.destination.options[myForm.destination.selectedIndex].value;
+                           window.location=myDestination;
+                           
+                       }
+            </script>            
+    </form>
+
+        <br><br>
+<!--second form -->
+     <form>
+            <h4>Choose your destination (using onClick event handler)</h4>
+            <select name="destination">
+                <option value="">Choose Destination:</option>
+            <option value="http://www.w3.org/">W3C</option>
+            <option value="http://www.facebook.org/">Facebook</option>
+                <option value="http://www.ccsf.edu">CCSF</option>
+            <option value="https://www.usa.gov/coronavirus">Information about Coronovirus</option>
+                </select>    
+            <input type="button" value="Submit" onclick="gotopage(this.form);">
+                   
+         
+         
+                                                      
+        </form>
+                                                     </div>
+    
+                                                    </div>
+    
+    <h2><a href="#hw3p4" id="hw3p4">Part 4 State data</a></h2><div>
+            
+                                                   <div>
+    
+        
+         <h4>States</h4>
+       
+        <form name="myform" id="myform">
+            
+            
+        <input type="button" value="Click for instruction" id="click"><br><br>
+            
+            <div id="instruction" class="instruction">Enter a state name for:<br>
+            Alabama - AL<br>
+            Alaska - AK<br>
+            Arizona - AZ<br>
+            Arkansas - AR<br>
+            California - CA<br>
+            Colorado - CO<br><br></div>
+            
+            
+            
+            <input id="yourstate" name="yourstate">
+  
+
+
+        
+        
+        
+       
+            
+            
+            <input type="button" value="State Info"  id="button_state" onclick="process();"><br><br>
+            
+            <div id="errorname"></div>
+       
+       <div id="state_info">Thanks for your inquiry, here is the information you requested:<br><br>
+<table>
+        <tr><td>State Abbr</td><td><input type="text" id="abbr" readonly></td></tr>
+    
+    <tr><td>State Name</td><td><input type="text" id="statename" readonly></td></tr>
+    
+    <tr><td>Capital</td><td><input type="text" id="capital" readonly></td></tr>
+    
+    <tr><td>Population</td><td><input type="text" id="pop" readonly></td></tr>
+    
+        </table></div> <br>
+        
+
+        
+        <input type="Reset" value="Reset" onclick="reSet_state();">
+        
+        </form>
+        
+        
+        
+            
+           <!--Script for States -->
+         
+        <script>
+        
+var arrayState=[['AL','Alabama','Montgomery','4,887,871'],   ['AK','Alaska','Juneau','737,438'],['AZ','Arizona','Phoenix','7,171,646'],['AR','Arkansas','Little Rock','3,010,825'],['CA','California','Sacramento','39,557,045'],['CO','Colorado','Denver','5,694,564']];
+            
+            
+function process(){
+    
+    
+  
+         
+var inputState=document.getElementById("yourstate").value;
+    inputState=inputState.toUpperCase();
+
+    
+    
+    
+ 
+     
+for(var row=0; row<arrayState.length; row++){
+                    
+    
+     
+     
+     if((inputState==arrayState[row][1].toUpperCase())||(inputState==arrayState[row][0].toUpperCase())){
+        $("#state_info").show();
+        
+       
+         document.getElementById("abbr").value=arrayState[row][0];
+         document.getElementById("statename").value=arrayState[row][1];
+         document.getElementById("capital").value=arrayState[row][2];
+         document.getElementById("pop").value=arrayState[row][3];
+         
+         document.getElementById("errorname").innerHTML="";
+         break;
+     }else{
+       
+         $("#state_info").hide();
+         document.getElementById("errorname").innerHTML="<p style='color:red'>Make sure to choose the state</p>";
+        
+        
+        
+         
+       
+     }
+        
+   
+                    
+                    
+}
+         
+    
+               
+               
+     
+    
+    
+                        
+}
+        </script>
+ <!--Reset Button for state-->                                                      
+   <script>
+                                                       function reSet_state(){
+                                                           document.getElementById("errorname").innerHTML="";
+                                                           document.getElementById("yourstate").value="";
+                                                           $("#state_info").hide();
+                                                           
+                                                       }
+  </script>
+
+  
+        
+        </div>
+                                             </div>
+                           
+    <h2><a href="#ec" id="ec">Extra Credit Astriks Square</a></h2><div>
+      
+                                                   <div><form id="form">    
+    <br><br>
+    <input type="number" name="aster" id="aster"><input type="button" value ="Submit" onclick="asteriks();">
+    
+    <div id="output"></div><br>
+    <input type="reset" value="Reset" onclick="reSet();">
+                                                       
+    <script>
+       
+           
+            $("#form").validate({
+                rules:
+                {
+                    aster:{required:true, number: true, min:2, max:10}
+                }
+        
+            });
+        
+        function asteriks(){
+            
+           if($("#form").valid()){
+               console.log("Valid");
+            
+        var row, size;
+        var mystr="";
+            
+            
+        size=document.getElementById("aster").value;
+    
+        mystr+="<pre>";
+for (var row=1; row<=size; row++){
+    
+    
+    if((row==1)||(row==size)){
+             for(var l=1; l<=size; l++){
+                 
+                 mystr+="*";
+             }
+          
+        
+    }else{
+        
+        
+        
+        for(var c=1;c<=size;c++){
+            
+            if((c==1)||(c==size)){
+                mystr+="*";
+                
+            }else{
+                mystr+="&nbsp;"
+            }
+                 
+             }
+        
+    }
+    
+    
+    
+       
+            
+        
+    mystr+="<br>";
+}
+    
+            
+    
+   
+                   
+ 
+    mystr+= "<pre/>" ;
+        
+        
+        document.getElementById("output").innerHTML=mystr;
+        }
+        
+        }
+        </script>
+    <!--Creating RESET button-->
+     <script>
+                                                       function reSet(){
+                                                           document.getElementById("output").innerHTML=("");
+                                                           document.getElementById("aster").value=("");
+                                                           var validator = $( "#form" ).validate();
+                                                           
+                                                           validator.resetForm();
+                                                       }
+                                                       </script>
+                                  
+    </form>
+    
+    </div></div>
+                                       
+</div>
+        
+     
+        
+        
+        
+     
+        <a href = "hw.html"><h1>Home</h1></a>
+        
+   
+        
+        
+       
+    </body>
+</html>

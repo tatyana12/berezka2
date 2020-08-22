@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Homework 4 Part 3</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="CSS/hw.css">
+        
+        <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+        
+        <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+       
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+        <!--Jquery Validation-->
+        <script>
+             $(document).ready(function(){
+                $("#myform").validate({
+                    rules:
+                    {
+                        zip:{required:true},
+                        
+                        
+                    }
+                });
+            });
+        
+        </script>
+      
+        <script>
+        $(document).ready(function(){
+            $('#zip').mask('(000) 000-0000');
+        });
+            
+        </script>
+        
+        <script>
+        function process(){
+            
+             if($("#myform").valid()){
+            var input=document.getElementById("zip").value;
+                 
+                 
+                 var parts = input.split(") ").join("-").split("-");
+               
+            
+            
+            document.getElementById("first").value=parts[1];
+            document.getElementById("second").value=parts[2];
+         
+            document.getElementById("areacode").value=parts[0].substr(1, 4);
+            
+            
+        }
+        }
+        </script>
+        
+    </head>
+    <body> 
+        
+        
+         <h2>Homework 4 Part 3</h2>
+        
+        
+    <form id="myform">
+        <table>
+        <tr><td>Enter a Phone in the format (999) 999-9999</td><td><input type="text" id="zip" name="zip"></td></tr>
+            <tr><td  colspan="2"><input type="button" value ="Split" onclick="process();"></td></tr>
+            <tr><td>First Three Digit of the Phone:</td><td><input type ="text" id="first" readonly></td></tr>
+            <tr><td>Last 4 Digit of the Phone:</td><td><input type="text" id="second" readonly></td></tr>
+            <tr><td>Area Code:</td><td><input type="text" id="areacode" readonly></td></tr>
+        
+        </table>
+        <input type="reset" value="Reset">
+        
+        </form>
+        <br>
+        <a href = "hw4.html"><h1>Homework 4</h1></a>
+        <a href = "hw.html"><h1>Home</h1></a>
+    </body>
+   
+</html>

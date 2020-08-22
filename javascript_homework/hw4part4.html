@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <title>Navigation Menu Homework 4 Part 4</title>
+        
+        <meta name="description" content="CNIT 133 homework 4 part 4 Navigation menu JQuery">
+        
+        <meta charset="utf-8">
+        
+        
+        <link rel="stylesheet" href="CSS/hw.css">
+        
+        <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+        
+        <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
+     
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+       
+
+        
+        
+        <style>
+            
+:root{
+    
+    --first: lightyellow;
+     --second: orange;
+     --third: lightpink;
+     --fourth: plum;
+     --fifth: lightblue;
+    
+}
+            
+body{ width: 950px;margin-left: auto; margin-right: auto;}
+
+#wrapper{text-align: center;}
+.dropdown{position: relative; left:25px;height: 30px;}
+.dropdown ul, dropdown li {margin: 0px; padding: 0; list-style-type: none;}
+ 
+            
+          
+.dropdown a{color: darkblue; text-decoration: none; border-style: solid; border-width: 1px; margin: 0; padding: 0;font-size: 18px;}
+
+ #second a:hover{
+                
+                background-color: var(--second);
+            }
+ #third a:hover{
+                
+                background-color: var(--third);
+            }
+ #fourth a:hover{
+                
+                background-color: var(--fourth);
+            }
+            
+           
+            
+
+ .dropdown #hw1:hover{
+   
+    background-color: var(--first);
+   
+}
+ .dropdown #hw2:hover{
+   
+    background-color: var(--second);
+   
+}
+ .dropdown #hw3:hover{
+   
+    background-color:var(--third);
+   
+}
+ .dropdown #hw4:hover{
+   
+    background-color:var(--fourth);
+   
+}
+ .dropdown #hw5:hover{
+   
+    background-color:var(--fifth);
+   
+}
+        
+        
+        
+        </style>
+  
+ <script src="http://code.jquery.com/jquery-1.7.1.js"></script>
+      <script> 
+        
+        $(document).ready(function(){
+            $('ul.dropdown ul').hide();
+       
+            $("ul.dropdown li").hover(
+            
+            function(){
+              
+             
+                  
+                   $('ul', this).slideDown(200);
+     }, 
+                function(){
+                
+                $('ul', this).slideUp(200);
+                
+                
+            });
+          
+           
+            
+          });
+        
+        </script>
+        
+     
+    </head>
+    <body>
+        
+        
+        
+             
+             <h1>CNIT 133 Homework 4 Part 4</h1>
+        <h2>Navigation menu</h2>
+             
+             
+             
+             
+    <div id="wrapper">          
+            
+<ul style="display:inline;" class="dropdown">
+    
+    <!--HOMEWORK 1-->
+    
+           <li style="display:inline; position: relative; float: left; width: 180px; height: 30px; ">
+               <a href="hw.html" target="_blank" id="hw1" style="display: block; width: 178px; height: 28px; line-height: 28px;">Homework 1</a>
+        </li>
+ 
+    
+    <!--HOMEWORK 2-->
+    
+           <li style="display:inline; position: relative; float: left; width: 180px; height: 30px; "> <a href="hw2.html" target="_blank" id="hw2"  style="display: block; width: 178px; height: 28px; line-height: 28px;" >Homework 2</a>
+            
+                             <ul style="display:block; position: absolute; " id="second" >
+                                 
+                                 <!--PART 1-->
+                                                <li style="display: block; float: left; position: relative; width: 180px; height: 30px;">
+                                                    <a href ="hw2part1.html" target="_blank" style=" display:block; width: 178px; height: 28px; line-height: 28px;">Part 1</a>
+                                                </li>
+                                 <!--PART 2-->
+                                 
+                                                <li style="display: block; float: left; position: relative; width: 180px; height: 30px;">
+                                                    <a href ="hw2part2.html#accordion" target="_blank" style=" display:block; width: 178px; height: 28px; line-height: 28px;">Part 2</a>
+                                                </li>
+                                 <!--PART 3-->
+                                                <li style="display: block; float: left; position: relative; width: 180px; height: 30px;">
+                                                    <a href ="hw2part3.html" target="_blank" style=" display:block; width: 178px; height: 28px; line-height: 28px;">Part 3</a></li>
+                                 <!--PART 4-->
+                                 
+                                                <li style="display: block; float: left; position: relative; width: 180px; height: 30px;">
+                                                    <a href ="hw2part4.html" target="_blank" style=" display:block; width: 178px; height: 28px; line-height: 28px;">Part 4</a></li>
+                                 <!--EXTRA CREDIT-->
+                                                <li style="display: block; float: left; position: relative; width: 180px; height: 30px;">
+                                                    <a href ="extracredit.html" target="_blank" style=" display:block; width: 178px; height: 28px; line-height: 28px;">Extra Credit</a></li>
+                                                
+                                                
+                                               
+                                               
+                             </ul>
+            
+          
+                
+            </li> 
+    
+    <!--HOMEWORK 3-->
+    
+           <li style="display:inline; position: relative; float: left; width: 180px; height: 30px; ">
+              <a href="hw3.html" target="_blank" id="hw3" style="display: block; width: 178px; height: 28px; line-height: 28px;">Homework 3</a>
+            
+                            <ul style="display:block; position: absolute; " id="third">
+                                
+                                <!--PART 1-->
+                                                <li style="display: block; float: left; position: relative; width: 180px; height: 30px;">
+                                                    <a href ="hw3.html" target="_blank" style=" display:block; width: 178px; height: 28px; line-height: 28px;">Part 1</a>
+                                                </li>
+                                <!--PART 2-->
+                                
+                                                <li style="display: block; float: left; position: relative; width: 180px; height: 30px;">
+                                                    <a href ="hw3.html#hw3p2" target="_blank" style=" display:block; width: 178px; height: 28px; line-height: 28px;">Part 2</a>
+                                                </li>
+                                
+                                <!--PART 3-->
+                                                <li style="display: block; float: left; position: relative; width: 180px; height: 30px;">
+                                                    <a href ="hw3.html#hw3p3" target="_blank" style=" display:block; width: 178px; height: 28px; line-height: 28px;">Part 3</a></li>
+                                
+                                <!--PART 4-->
+                                                <li style="display: block; float: left; position: relative; width: 180px; height: 30px;">
+                                                    <a href ="hw3.html#hw3p4" target="_blank" style=" display:block; width: 178px; height: 28px; line-height: 28px;">Part 4</a></li>
+                                
+                                <!--EXTRA CREDIT-->
+                                                <li style="display: block; float: left; position: relative; width: 180px; height: 30px;">
+                                                    <a href ="hw3.html#ec" target="_blank" style=" display:block; width: 178px; height: 28px; line-height: 28px;">Extra Credit</a></li>
+                                                
+                                                
+                                               
+                                               
+                             </ul>
+            
+          
+            </li> 
+    
+    <!--HOMEWORK 4-->
+    
+           <li style="display:inline; position: relative; float: left; width: 180px; height: 30px; ">
+             <a href="hw4.html" target="_blank" id="hw4" style="display: block; width: 178px; height: 28px; line-height: 28px;">Homework 4</a>
+                                         <ul style="display:block; position: absolute; " id="fourth" >
+                                             
+                                <!--PART 1-->
+                                             
+                                                <li style="display: block; float: left; position: relative; width: 180px; height: 30px;">
+                                                    <a href ="hw4part1.html" target="_blank" style=" display:block; width: 178px; height: 28px; line-height: 28px;">Part 1</a>
+                                                </li>
+                                             
+                                <!--PART 2-->
+                                             
+                                                <li style="display: block; float: left; position: relative; width: 180px; height: 30px;">
+                                                    <a href ="hw4part2.html" target="_blank" style=" display:block; width: 178px; height: 28px; line-height: 28px;">Part 2</a>
+                                                </li>
+                                             
+                                <!--PART 3-->
+                                             
+                                                <li style="display: block; float: left; position: relative; width: 180px; height: 30px;">
+                                                    <a href ="hw4part3.html" target="_blank" style=" display:block; width: 178px; height: 28px; line-height: 28px;">Part 3</a></li>
+                                             
+                                <!--PART 4-->
+                                                <li style="display: block; float: left; position: relative; width: 180px; height: 30px;">
+                                                    <a href ="hw4part4.html" target="_blank" style=" display:block; width: 178px; height: 28px; line-height: 28px;">Part 4</a></li>
+                                             
+                                             
+                                             
+                               
+                                               
+                                               
+                             </ul>
+            
+          
+    
+            </li>
+    
+    <!--HOMEWORK 5-->
+          
+           <li style="display:inline; position: relative; float: left; width: 180px; height: 30px; ">
+                 <a  href="hw5.html" target="_blank" id="hw5" style="display: block; width: 178px; height: 28px; line-height: 28px;">Homework 5</a>
+            
+                            
+            
+          
+                
+            </li>
+            
+</ul>
+            
+            
+            
+            
+            
+            
+         <br> <br>  <br> <br> <br> <br> <br><br><br>
+             <a href = "hw4.html"><h1>Homework 4</h1></a>
+        <a href = "hw.html"><h1>Home</h1></a>
+       
+            
+        </div>
+       
+        
+        
+    </body>
+</html>

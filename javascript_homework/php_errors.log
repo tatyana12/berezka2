@@ -1,0 +1,52 @@
+[06-May-2020 13:52:26 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:52:28 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:52:28 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:52:28 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:52:28 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:52:28 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:52:28 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:52:35 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:52:35 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:52:35 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:52:36 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:52:36 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:52:37 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:52:39 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:53:08 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:53:10 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:53:10 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:53:11 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:53:11 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:53:12 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:53:17 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 13:53:23 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 14:02:45 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 8
+[06-May-2020 14:03:36 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/gethint.php on line 14
+[06-May-2020 21:42:14 America/Los_Angeles] PHP Notice:  Undefined variable: cityState in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:42:14 America/Los_Angeles] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:43:23 America/Los_Angeles] PHP Notice:  Undefined variable: cityState in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:43:23 America/Los_Angeles] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:47:09 America/Los_Angeles] PHP Notice:  Undefined variable: cityState in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:47:09 America/Los_Angeles] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:47:22 America/Los_Angeles] PHP Notice:  Undefined variable: cityState in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:47:22 America/Los_Angeles] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:56:10 America/Los_Angeles] PHP Notice:  Undefined variable: cityState in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:56:10 America/Los_Angeles] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:59:09 America/Los_Angeles] PHP Notice:  Undefined variable: cityState in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:59:09 America/Los_Angeles] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:59:24 America/Los_Angeles] PHP Notice:  Undefined variable: cityState in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:59:24 America/Los_Angeles] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:59:28 America/Los_Angeles] PHP Notice:  Undefined variable: cityState in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:59:28 America/Los_Angeles] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:59:33 America/Los_Angeles] PHP Notice:  Undefined variable: cityState in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:59:33 America/Los_Angeles] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:59:42 America/Los_Angeles] PHP Notice:  Undefined variable: cityState in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:59:42 America/Los_Angeles] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:59:48 America/Los_Angeles] PHP Notice:  Undefined variable: cityState in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:59:48 America/Los_Angeles] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:59:53 America/Los_Angeles] PHP Notice:  Undefined variable: cityState in /students/iberezin/public_html/HW/getCityState.php on line 9
+[06-May-2020 21:59:53 America/Los_Angeles] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /students/iberezin/public_html/HW/getCityState.php on line 9
+[07-May-2020 17:52:58 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/getcity.php on line 18
+[07-May-2020 17:53:00 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/getcity.php on line 18
+[07-May-2020 17:53:03 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/getcity.php on line 18
+[07-May-2020 17:53:04 America/Los_Angeles] PHP Parse error:  syntax error, unexpected '$a' (T_VARIABLE) in /students/iberezin/public_html/HW/getcity.php on line 18

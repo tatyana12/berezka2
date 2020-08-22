@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+       <title>CNIT 133 Homework 5</title>
+        
+        <meta name="description" content="CCSF's Spring 2020 CNIT 133 yulia Berezina Homework 5:  JavaScript JQuerry REST API JSON ;">
+        
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="CSS/hw.css">
+        
+        <!--FONTS-->
+        
+        <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+        
+        <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
+        
+        <!--JQUERY -->
+
+       
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        
+        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+        
+        <!--CSS-->
+   <style>
+       #info{
+           
+           color: darkred;
+           font-size: 20px;
+       }
+        
+        </style>
+        
+        
+       
+</head>
+    <body style="text-align: center;">
+        
+        
+        <h1>Homework 5 AJAX</h1>
+         <h2>AJAX Example</h2>
+
+
+
+
+
+<h4>Start typing a name in the input field below:</h4>
+<form name="myform" id="myform">
+    
+    <script>
+    
+     $(document).ready(function(){
+         $("#myform").validate({
+                 rules:
+                   {
+                       fname: {required: true}
+                      
+                   }
+               });
+              
+           });
+       
+                
+function showHint(str) {
+   if($("#myform").valid()){
+      
+var xmlhttp;
+      try{
+           var xmlhttp = new XMLHttpRequest();
+          
+      }
+      catch(e){
+          try {
+              xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+          }
+          catch(e){
+              try{
+                  xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                  
+              }
+              catch(e)
+                  {
+                      alert("Your browser does not support AJAX!");
+                      return false;
+                  }
+          }
+      }
+       
+       
+       
+   xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("txtHint").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET", "gethint.php?q=" + str, true);
+    xmlhttp.send();
+  }
+    }
+
+</script>
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname" onkeyup="showHint(this.value)"><input type="reset" value = "New name">
+</form>
+<p>Suggestions: <span id="txtHint"></span></p>
+        
+        
+       
+        
+ 
+        <h2>Example using API Request with AJAX call GET</h2>
+        
+        
+            
+            <ul style="list-style-type: none;">
+                <li>REST API resourse for this example taken from: <a style="color:darkred; font-size: 20px;" target="_blank" href="https://openweathermap.org/">Openweather</a></li>
+        <li>Easy to access</li>
+        <li>You got a key after registration</li>
+        <li>Detailed information at  <a style="color:darkred; font-size: 20px;" target ="_blank" href="https://openweathermap.org/current">this page</a></li>
+        <li>Type of response file: JSON, XML</li>
+        <li>Multilingual support</li></ul>
+       
+        
+     <h4>Check out weather in your city!</h4>
+  
+     
+        <input type ="text" id="city" name="city" title="Press enter to display information" placeholder="enter the city..." onkeyup="showCity(this.value)">
+        
+        
+        <input type="button" onclick="reSet();" value ="Reset" >
+    
+<br>
+        <p>Suggestions:<span id="txtCity"></span><br>
+      <div id="info">
+      </div>
+        
+      
+        
+        
+        
+  
+        
+       <script>
+           
+  
+        
+    $(document).ready(function(){
+        $(document).on("keypress", "#city", function(event){
+            if(event.which ===13) {
+                var input = $(this);
+                var city = input.val();
+                console.log("This is "+ city);
+                getInfo(city);
+               
+               
+            }
+        });
+    });
+            
+          
+        
+            function getInfo(city){
+          
+                    
+                    
+                var url = "https://api.openweathermap.org/data/2.5/weather?q=" + city+" &appid=2851f85faaa266b6d399a7fcd8e5f8ad";
+                var xmlhttp = new XMLHttpRequest();
+                
+                xmlhttp.open("GET", url, false);
+                xmlhttp.send();
+                
+                var data =  xmlhttp.responseText;
+                console.log(data);
+                showUser(xmlhttp);
+                
+            }
+            
+            function showUser(xmlhttp){
+                
+                if(xmlhttp.status === 200){
+                    
+                    var json = xmlhttp.responseText;
+                    var weather = JSON.parse(json);
+                    //var weatherinfo = weather["coord"]["weather"];
+    document.getElementById("info").innerHTML = "It is  "+weather.weather[0].description + " in " + weather.name +" and temreture "+ (parseFloat(weather.main.temp)-273).toFixed(1) +" C";
+                   
+                 }else{
+ var wrong=document.getElementById("city").value;
+                    document.getElementById("info").innerHTML="We coudn't find info about " + wrong+". Make sure that spelling is correct."
+}
+            }
+    
+       
+                
+function showCity(city) {
+  
+var xmlhttp;
+      try{
+           var xmlhttp = new XMLHttpRequest();
+          
+      }
+      catch(e){
+          try {
+              xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+          }
+          catch(e){
+              try{
+                  xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                  
+              }
+              catch(e)
+                  {
+                      alert("Your browser does not support AJAX!");
+                      return false;
+                  }
+          }
+      }
+       
+       
+       
+   xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("txtCity").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET", "getcity.php?q=" + city, true);
+    xmlhttp.send();
+  }
+  
+
+
+                
+                
+                
+          function reSet(){
+              
+              document.getElementById("city").value="";
+              document.getElementById("info").innerHTML="";
+              document.getElementById("txtCity").innerHTML="";
+              
+          }      
+                
+         
+                
+                
+            
+            
+            
+        </script>
+
+   
+        
+        
+        
+         <a href = "hw.html"><h3>Home</h3></a>
+   
+      
+     
+     </body>
+</html>

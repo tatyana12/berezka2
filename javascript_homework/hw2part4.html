@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+       <title>CNIT 133 Homework 2 Part 4</title>
+        
+        <meta name="description" content="CCSF's Spring 2020 CNIT 133 Homework 2 Part 4: using JavaScript and JQuerry to perform basic functions on input values Yulia Berezina Final Result;">
+        
+        <meta charset="utf-8">
+        
+        
+    <link rel="stylesheet" href="CSS/hw.css">
+        
+        <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+        
+        <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
+        
+        <style>
+            div.continue
+            {display:none;}
+            div.beef{display:none;}
+            
+        </style>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+     
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+        
+        
+    </head>
+       <body>
+           
+           <h2>Homework 2 Part 4</h2>
+           <br><br>
+          
+           
+            <form id="myform" class="myform" name="myform">
+                
+                <table><tr><td><div id="extra" class="extra"></div>
+           
+           <input type="number" id="yournum" value=""> <input type="button" id="btn" onclick="process()" value="Calculate">
+                    </td><td><div id="extra2" class="extra2"></div><div id="extra3" class="extra3"></div></td></tr>
+                
+                
+                </table>
+           
+               <br>
+                
+                 <div class="continue">Do you want to continue?<br><input type="button" value ="YES" name="yes" onclick="yesno()"><input type="button" value="NO" id="no" name="no" onclick="noyes()"></div>
+                
+            
+                
+           
+                <script>
+                     var n1, n2;
+           n1=Math.floor(Math.random()*10);
+           n2=Math.floor(Math.random()*10);
+           document.getElementById("extra").innerHTML=("How much is "+n1+" multiply on "+n2+"?");
+           
+           $(document).ready(function(){
+               $("#myform").validate({
+                   
+                   
+                   rules:
+                   {
+                       yournum: {required: true, number:true}
+                      
+                   }
+               });
+              
+           });
+               
+                function process(){
+                    if($("#myform").valid())
+                        {
+                    
+                var result, yourAnswer, yA, textstring;
+                result=n1*n2;
+         
+           yourAnswer=document.getElementById("yournum").value;
+                    yA=parseInt(yourAnswer);
+                    if(yA==result){
+                      
+                       
+                       document.getElementById("extra2").innerHTML=("Good job!");
+                        document.getElementById("extra3").innerHTML=("");
+                        document.getElementById("yournum").value="";
+                       
+                       
+                      
+                               $(".continue").show();
+                       
+                
+                   } else{
+                       console.log("else");
+                       
+                       document.getElementById("extra3").innerHTML=("No. Please try again.");
+                       document.getElementById("extra2").innerHTML=("");
+                       document.getElementById("yournum").value="";
+                       
+                   }
+                            console.log("end");
+                    
+ 
+                }
+                }
+                
+         
+ function noyes(){
+
+       
+            $("#myform").hide();
+}                 
+function yesno(){
+                
+                window.location.reload();
+                
+}
+              
+        </script>
+                
+                
+                 
+               
+           </form><br>
+           
+     <div class="arrows">
+        <a class="arrowright" href="hw2part3.html"><img src="images/arrowleft.png" alt="arrows to the left page"></a>
+        
+        
+    <a class="arrowright" href="extracredit.html"><img src="images/arrowright.png" alt="arrows to the right page"></a>
+            
+    </div>
+           
+           
+           
+           <a href = "Hw.html"><h3>Home</h3></a>
+        <a href = "Hw2.html"><h3>Homework 2</h3></a>
+        
+     </body>
+</html>

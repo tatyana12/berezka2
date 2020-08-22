@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Homework 4 Part 1</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        
+        <link rel="stylesheet" href="CSS/hw.css">
+         <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+        
+        <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+       
+        <!--Jquery Validation-->
+        <script>
+            $(document).ready(function(){
+                $("#myform").validate({
+                    rules:
+                    {
+                        input:{required:true},
+                        search:{required:true}
+                        
+                    }
+                });
+            });
+        
+        </script>
+        
+        
+        
+    </head>
+    <body>
+        <h2>Homework 4 Part 2</h2>
+        <form name="myform" id="myform">
+        
+         Text:<br><textarea id="input" name="input"></textarea><br>
+        
+      Character that you want to find:<br>
+        <input type="text" id="search" name="search"><br>
+            <div id="errOut" style="color:red;"></div><br>
+        Answer:<br>
+        <input type="text" id="answer" readonly><br><br>
+        
+        
+     
+       <input type="button" value="Submit" id="button" onclick ="process();">
+        <input type="reset" value="reset" id="reset">
+        
+      
+        
+        <script>
+     function process(){
+         
+                if($("#myform").valid()){
+           count=0;
+            var s=document.getElementById("input").value;
+               var sent=s.toLowerCase();
+            
+            var c=document.getElementById("search").value;
+                var char=c.toLowerCase();
+           inputRegExp=/^(\w)$/; 
+                    
+               //CHECK THAT INPUT JUST ONE CHARACTER
+                    
+                   if ( ! inputRegExp.test(char)){
+                        
+                    document.getElementById("errOut").innerHTML="Invalid input, enter just one character";
+                       document.getElementById("answer").value="";
+                }else{
+                    
+                    
+               // READ SENTENCE 
+                
+                for(i=0; i<=sent.length; i++){
+                    
+                    
+                    
+                    if (sent.charAt(i)==char){
+                        count++;
+                        
+                    }
+                }
+                    
+                    if (count==0){
+                        document.getElementById("search").value="";
+                        
+                        
+                        document.getElementById("errOut").innerHTML="";
+                        document.getElementById("answer").value="";
+                        
+                        myText="<html>\n";
+                        myText+="<head>\n";
+                        myText+="<title>No occurances</title>\n";
+                        myText+="</head>\n";
+                        myText+="<body>\n";
+                        myText+="<div align='center'>\n";
+                        myText+="<h4> Search character not found in text string!</h4>\n"
+                        myText+="<input type='button' value='Close Window' onclick='window.close()' onclick='reSet();'>\n";
+                        myText+="</div>\n";
+                        myText+="</body>\n";
+                        myText+="</html>\n";
+                           
+                        var errW=window.open("","new_window", "top=220,left=250,width=300,height=100");
+                        errW.focus();
+                        errW.document.write(myText);
+                        errW.document.close();
+                        
+                        
+                    }else{
+                        document.getElementById("errOut").innerHTML="";
+                       
+                        
+                        document.getElementById("answer").value=count+" occurance(s) "+char+" found";
+               }
+                    
+            }
+            }
+            }
+            
+           
+        </script>
+        
+        </form>
+        
+        
+        
+        <br>
+        <a href = "hw4.html"><h1>Homework 4</h1></a>
+            <a href = "hw.html"><h1>Home</h1></a>
+    </body>
+    
+</html>

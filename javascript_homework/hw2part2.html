@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+       <title>CNIT 133 Homework 2 Part 2</title>
+        
+        <meta name="description" content="CCSF Spring 2020 CNIT 133 Homework 2 Part 2: JavaScript and JQuerry to perform basic functions on input values Yulia Berezina final grades">
+        
+        <meta charset="utf-8">
+        
+        
+        <link rel="stylesheet" href="CSS/hw.css">
+        
+        <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+        
+        <link href="https://fonts.googleapis.com/css?family=Ibarra+Real+Nova&display=swap" rel="stylesheet">
+        
+        
+        <script 
+        src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+
+        
+        <script>
+           
+       $(document).ready(function(){
+           
+          $("#myform").validate({
+             
+                    rules: 
+                    {
+                        homeAv:{required:true, number: true, min:0, max:100},
+                        
+                        midTerm:{required:true, number: true, min:0, max:100},
+                        
+                        final:{required:true, number: true, min:0, max:100},
+                        part:{required:true, number: true, min:0, max:100}
+                    }
+                     });
+           console.log("yes");
+        
+       console.log("what");
+       });
+    
+        function process(){
+            if($("#myform").valid())
+            {
+               
+        
+                var grad1, grad2, grad3, grad4, g1, g2, g3, g4, fav;
+                
+                grad1=document.getElementById("homeAv").value;
+                grad2=document.getElementById("midTerm").value;
+                grad3=document.getElementById("final").value;
+                grad4=document.getElementById("part").value;
+       
+                
+                g1=parseInt(grad1);
+                g2=parseInt(grad2);
+                g3=parseInt(grad3);
+                g4=parseInt(grad4);
+         
+
+    faverage = (.5 * g1) + (.2 * g2) + (.2 * g3) + (.1 * g4);
+                fav=faverage.toFixed(0)
+                
+    document.getElementById("result").value=fav;
+   
+  
+ if (fav>=90&&fav<=100)
+ {
+        letterx ="A";
+                  
+ document.getElementById("error").innerHTML=("");
+ 
+ }
+    else if (fav>=80&&fav<=89)
+{
+        letterx ="B";
+    document.getElementById("error").innerHTML=("");
+
+
+        
+}
+    else if (fav>=70&&fav<=79)
+    {
+        letterx ="C";
+        document.getElementById("error").innerHTML=("");
+    }
+    else if (fav>=60&&fav<=69)
+    {
+        letterx ="D";
+       
+ 
+        document.getElementById("error").innerHTML=("Please reatake your final exam!");
+        
+    
+        
+    }
+                
+    else if(fav>0&&fav<=59)
+    {
+        letterx ="F";
+        document.getElementById("error").innerHTML=("Please reatake your final exam!");
+        
+   
+        
+    }
+                
+         document.getElementById("letter").innerHTML=letterx;         
+               
+
+}else{
+    document.getElementById("letter").innerHTML=("");
+    document.getElementById("error").innerHTML=("");
+}
+          
+}
+            
+           
+    
+   
+        
+        
+        </script>
+    </head>
+
+<body>
+    
+      
+       <h2>Homework 2 Part 2</h2>
+       
+        
+        
+<form name = "myform" class="myform" id="myform">
+    <table>
+
+   
+        <tr><td>Homework average</td><td><input type = "number" id ="homeAv" name = "homeAv" ></td></tr>
+        <tr><td>Mid-Term Exam</td><td><input id= "midTerm" type = "number" name = "midTerm"></td></tr>
+        <tr><td>Final Exam score</td><td><input type = "number" name = "final" id="final"></td></tr>
+        <tr><td>Participation</td><td><input type = "number" name = "part" id="part"></td></tr>
+        <tr><td>Result</td><td><input type = "number" id = "result" name = "result" readonly></td></tr>
+        <tr><td>Final Result</td><td><div id="letter" class="letter"></div></td></tr>
+        
+      
+   
+
+
+        
+    
+    
+    </table>
+    <input type="button" value="Button" onclick = "process()">
+           <input type = "reset" value = "reset" id="reset" onClick="window.location.reload();"> <br>
+        
+        
+        <div id="error"></div>
+      
+        </form> <br>
+    
+    
+    <div class="arrows">
+        <a class="arrowright" href="hw2part1.html"><img src="images/arrowleft.png" alt="arrows to the left page"></a>
+        
+        
+    <a class="arrowright" href="hw2part3.html"><img src="images/arrowright.png" alt="arrows to the right page"></a>
+            
+    </div>
+        
+        <a href = "hw.html"><h3>Home</h3></a>
+        <a href = "hw2.html"><h3>Homework 2</h3></a>
+                
+    
+    </body>
+</html>

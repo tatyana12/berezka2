@@ -1,0 +1,229 @@
+html {
+    background: url(../images/clouds.png);	
+}
+
+body{
+    margin-left: auto;
+    margin-right: auto;
+    width:600px;
+}
+
+
+h1{
+    font-size: 40px;
+    text-transform: uppercase;
+    text-shadow: white 2px 2px 2px;
+    color: #0b689e;
+    font-family:bold;
+    text-align: center;
+    font-family: 'Bowlby One SC', cursive;   
+}
+
+
+h2{
+    font-size:26px;
+    color:red;
+    font-family: cursive;
+    
+    font-family: 'Ibarra Real Nova', serif;
+    text-align: center;
+}
+h3{
+    
+    font-size:26px;
+     text-transform: uppercase;
+    text-shadow: white 2px 2px 2px;
+    color: #0b689e;
+     font-family:bold;
+    text-align: center;
+    font-family: 'Bowlby One SC', cursive;  
+   
+}
+#accordion{
+    text-align: center;
+}
+
+#table{
+    text-align: center;
+}
+.menu{
+    
+    margin-top:100px;
+}
+
+a {
+      color: white;
+      text-decoration: none;
+      font-size: 30px;
+      letter-spacing: 5px;
+      font-family: 'Ibarra Real Nova', serif;  
+}
+
+
+.menu p{
+     display:block;
+    text-align: center;
+    margin-top: -20px;
+    width: 300px;
+    height: 90px; 
+    line-height: 70px; 
+     
+    margin-left: 25%;
+    
+}
+.letter{
+    font-size:26px;
+    color:red;
+    font-family: cursive;
+    
+    font-family: 'Ibarra Real Nova', serif;
+   padding-left: 20px;
+    padding-right: 20px;
+    
+}
+.myform{
+     width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+}
+.rate{
+    border: 1px solid black;
+    
+    
+}
+table.rate td, tr, th{
+    border: 1px solid black;
+    
+}
+table.sale td, tr, th{
+    
+     border: 1px solid black;
+}
+.sale{
+    border: 1px solid black;
+    
+}
+.continue{
+    background: url(../images/hw8.png) no-repeat;
+    width: 300px;
+    height: 90px;
+   
+    font-family: 'Ibarra Real Nova', serif;
+    text-align: center;
+    padding-top: 20px;
+    
+}
+
+.menu p:hover {
+    
+    width: 300px;
+    height: 90px;
+    background: url(../images/nav.png) no-repeat;
+    text-shadow: #0b689e 2px 2px 2px;   
+}
+
+.arrows{
+    
+    margin-left: 41%;
+    
+}
+a.arrowright:hover{
+opacity: 0.3;
+}
+
+a.arrowleft:hover{
+opacity: 0.3;
+}
+.arrows{
+    align-content: center;
+}
+
+.flip{
+    background: url(../images/hw3.png);
+     width: 300px;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 18px;
+    font-family: cursive;
+    color: white;
+}
+.panel{
+    
+    text-align: center;
+    font-size: 23px;
+    color: #0b689e;
+}
+
+.b2{
+    background: url(../images/hw2.png);
+    
+    
+}
+.b3{
+    background: url(../images/hw3.png);
+
+}
+.b4{
+    background: url(../images/hw4.png);
+
+}
+.b5{
+    background: url(../images/hw5.png);
+    
+}
+.b6{
+    background: url(../images/hw6.png);
+   
+}
+.b7{
+    background: url(../images/hw7.png);
+    
+}
+.b8{
+    background: url(../images/hw8.png);
+}
+
+.extra2{
+    
+    font-size:40px;
+    color:red;
+    font-family: cursive;
+    
+    font-family: 'Ibarra Real Nova', serif;
+    text-align: center;
+    padding-left: 40px;
+    
+}
+.extra3{
+    font-size:30px;
+    color:#0b689e;
+    font-family: cursive;
+    
+    font-family: 'Ibarra Real Nova', serif;
+    text-align: center;
+    padding-left: 20px;
+}
+
+#hw3p1{
+    
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    width:500px;
+}
+#hw3p2{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width:150px;
+   
+}
+#hw3p4{
+    
+    
+}
