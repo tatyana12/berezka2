@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Web Mobile 133M</title>
+<title>Web Mobile</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="CNIT 133M-Mobile Web w/HTML, CSS & JS-831 fall semester 2020 in CNIT 132 Yulia Berezina">
+<meta name="description" content="Home Page of the Mobile Web Development class   CCSF  fall semester in CNIT 133M Yulia Berezina">
+<link rel="stylesheet" href="index.css"> 
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#try").click(function(e){
+                $("h2").animate({
+                    fontSize: "2em",
+                    color: "yellow"
+                }, 1000, function(){
+                    $("h2").animate({
+                        fontSize: "1em",
+                        color: "#450920"
+                        }, 1000);
+                });
 
-  
-<link rel="stylesheet" href="index.css"> </head>
+                $("img").css("border", "5px solid white");
+                
+            
+
+            });
+            
+        });
+    </script> 
+
+</head>
     
     
 <body>
 <div>
-        
 
  <header>   
     
@@ -56,11 +77,12 @@
         
        <a class = "links" target="_blank"  href="https://www.w3schools.com/html/"> W3school</a>&nbsp; &nbsp; Perfect resource for general questions with good examples.<br>
       <a class = "links" target="_blank"   href="https://www.youtube.com">Youtube</a>&nbsp; &nbsp; The best inventions ever with a lot of information.<br>
-            
+      <button id="try" type="submit">Start Animation</button>   
 </main> 
         
                  
     
+ 
    
 <footer>
         
@@ -69,6 +91,5 @@
    
     </div>
     
- 
 </body>
 </html>   
