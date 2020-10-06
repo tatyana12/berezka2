@@ -8,6 +8,15 @@ body{
         margin: 0px auto;
     }
 
+a{
+    position: relative;
+}
+
+a[href$=".com/"]{
+    background-image: url(images/browser.png);
+
+}
+
 * {
   box-sizing: border-box;
 }
