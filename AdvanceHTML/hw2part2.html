@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Working with Grids</title>
+   <meta charset="utf-8">
+   <meta name="description" content="Yulia Berezina working with flex in CNIT 132A">
+   <style>
+
+      *{
+          text-align: center;
+          font-size: 0.85em;
+          font-weight: bold;
+
+      }
+      header{
+          background-color: red;
+          line-height: 30px;
+      }
+      main{
+          display: flex;
+      }
+      main>div{
+          width: 25%;
+          padding: 10px 5px;
+      }
+      .aside_1{
+          background-color: yellow;
+      }
+      .content_1{
+          text-align: left;
+          color: white;
+          background-color: blue;
+      }
+
+      .content_2{
+          text-align: justify;
+          color: darkblue;
+          background-color: purple;
+      }
+      .aside_2{
+          background-color: lightpink;
+      }
+footer{
+    padding: 5px;
+    background-color: lawngreen;
+
+}
+
+   </style>
+</head>
+<body>
+<div class=".container">
+  <header>Name of Company</header>
+    <main>
+        <div class="aside_1">This is the aside 1</div>
+        <div class="content_1">This is the main article of my page! This is the main content of the page. In  3 column layout, it should be shown in the middle between the aside 1 and aside 2!</div>
+        <div class="content_2">This column was created to have some content as a challenge to adapt the old 3 column layout to a 4 - column layout.</div>
+        <div class="aside_2">This is the side 2</div>
+    </main>
+
+    <footer>This is the footer<br>
+    Copyright &copy 2020</footer>
+</div>
+<div class="extra_menu"><a href="index.html">Home</a><br>
+    <a href="hw2.html">Homework 2</a></div>
+</body>
+</html>
