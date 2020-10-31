@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <style>
+        .container-fluid{
+            padding: 0;
+            margin: 0;
+        }
+        p{
+            text-align: justify;
+            padding:2%;
+        }
+        h1, h3{
+            text-align: center;
+        }
+        img{
+            margin: 0 auto;
+            display: block;
+
+        }
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top ">
+    <a href="home.html" class="navbar-brand">ABC TOYS</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+            <a href="home.html" class="nav-item nav-link ">Home</a>
+            <a href="products.html" class="nav-item nav-link active">Products</a>
+            <a href="contactus.html" class="nav-item nav-link">Contact Us</a>
+
+        </div>
+        <div class="navbar-nav ml-auto">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+<div class="accordion" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h2>
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    MOSAIQUE
+                </button>
+            </h2>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne">
+            <div class="card-body">
+                <img src="mosaique.png" width="200" height="auto" class="img-thumbnail" alt="Thumbnail Image">
+                <p>Beautiful colored pyramid for 1 year and older to help your child to develop constructive skills.</p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h2 >
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Teddy Bear
+                </button>
+            </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <img src="teddy.png" width="200" height="auto" class="img-thumbnail" alt="Thumbnail Image">
+                <p>Beautiful colored pyramid for 1 year and older to help your child to develop constructive skills.</p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h2>
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    LEGO
+                </button>
+            </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+                <img src="lego.png" width="200" height="auto" class="img-thumbnail" alt="Thumbnail Image">
+                <p>Beautiful colored pyramid for 1 year and older to help your child to develop constructive skills.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
