@@ -6,8 +6,9 @@
     <title>Home</title>
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+
 
     <style>
         .container-fluid{
@@ -20,13 +21,15 @@
         h1, h3{
             text-align: center;
         }
-        #mapDiv{
-        margin: 30px auto;
+        #mapholder{
+            width: 400px;
+            margin: 0 auto;
 
-
+            height: 300px;
         }
 
     </style>
+
 </head>
 <body>
 
@@ -58,72 +61,52 @@
 <div class="container-fluid">
     <h1>Geolocation Demo</h1>
 
-    <div id="mapDiv" style="position: relative; width: 400px; height: 400px;"></div>
-    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
-    <script type="text/javascript">
-        var map = null;
-        window.onload = function () {
-            /* Replace YOUR_BING_MAPS_KEY with your own credentials.
-                Obtain a key by signing up for a developer account at
-                http://www.microsoft.com/maps/developers/ */
-            var cred = "AqOtcNYpqbGuG5D92IlrL0AfLFX0xFABvTSj6JDrBdXKsEffsz1l7lggAuMfLuuI"; // substitute this big text by your own key
-            // Initialize map
-            map = new Microsoft.Maps.Map(document.getElementById("mapDiv"),
-                { credentials: cred });
-            // Check if browser supports geolocation
+
+
+    <div id="mapholder"></div>
+
+
+    <script>
+
+        var x = document.getElementById("demo");
+
+        window.onload = function getLocation() {
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(locateSuccess, locateFail);
-            }
-            else {
-                alert('I\'m sorry, but Geolocation is not supported in your current browser. Have you tried running this demo in IE9?');
-            }
-        }
-        // Successful geolocation
-        function locateSuccess(loc) {
-            // Set the user's location
-            var userLocation = new Microsoft.Maps.Location(loc.coords.latitude, loc.coords.longitude);
-            // Zoom in on user's location on map
-            map.setView({ center: userLocation, zoom: 17 });
-            // Draw circle of area where user is located
-            var locationArea = drawCircle(userLocation);
-            map.entities.push(locationArea);
-        }
-        // Unsuccessful geolocation
-        function locateFail(geoPositionError) {
-            switch (geoPositionError.code) {
-                case 0: // UNKNOWN_ERROR
-                    alert('An unknown error occurred, sorry');
-                    break;
-                case 1: // PERMISSION_DENIED
-                    alert('Permission to use Geolocation was denied');
-                    break;
-                case 2: // POSITION_UNAVAILABLE
-                    alert('Couldn\'t find you...');
-                    break;
-                case 3: // TIMEOUT
-                    alert('The Geolocation request took too long and timed out');
-                    break;
-                default:
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
             }
         }
-        // Draw blue circle on top of user's location
-        function drawCircle(loc) {
-            var radius = 100;
-            var R = 6378137;
-            var lat = (loc.latitude * Math.PI) / 180;
-            var lon = (loc.longitude * Math.PI) / 180;
-            var d = parseFloat(radius) / R;
-            var locs = new Array();
-            for (x = 0; x <= 360; x++) {
-                var p = new Microsoft.Maps.Location();
-                brng = x * Math.PI / 180;
-                p.latitude = Math.asin(Math.sin(lat) * Math.cos(d) + Math.cos(lat) * Math.sin(d) * Math.cos(brng));
-                p.longitude = ((lon + Math.atan2(Math.sin(brng) * Math.sin(d) * Math.cos(lat), Math.cos(d) - Math.sin(lat) * Math.sin(p.latitude))) * 180) / Math.PI;
-                p.latitude = (p.latitude * 180) / Math.PI;
-                locs.push(p);
-            }
-            return new Microsoft.Maps.Polygon(locs, { fillColor: new Microsoft.Maps.Color(125, 0, 0, 255), strokeColor: new Microsoft.Maps.Color(0, 0, 0, 255) });
+
+
+        function showPosition(position) {
+            var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+            var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+            +latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyDZueJr-73aLd8zLKE99vpxol0Pbn8w-ck";
+
+            document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+
         }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    x.innerHTML = "User denied the request for Geolocation."
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    x.innerHTML = "Location information is unavailable."
+                    break;
+                case error.TIMEOUT:
+                    x.innerHTML = "The request to get user location timed out."
+                    break;
+                case error.UNKNOWN_ERROR:
+                    x.innerHTML = "An unknown error occurred."
+                    break;
+            }
+        }
+
     </script>
 
 </div>
