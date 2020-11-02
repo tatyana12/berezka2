@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content=" CNIT 133M-Mobile Web  CCSF Geolocation spring semester 2020 Yulia Berezina">
-    <title>Geolocation</title>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta name="description" content=" CNIT 133M-Mobile Web  CCSF Home Page spring semester 2020 Yulia Berezina">
 
+    <title>Home</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-
-
     <style>
+        body{
+            min-width: 200px;
+        }
         .container-fluid{
 
             padding: 0;
             margin: 0;
         }
-
         p{
             text-align: justify;
             padding:2%;
@@ -25,15 +25,12 @@
         h1, h3{
             text-align: center;
         }
-        #mapholder{
-            width: 400px;
-            margin: 0 auto;
-
-            height: 300px;
+        #map{
+            height: 400px;
         }
 
     </style>
-
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyDZueJr-73aLd8zLKE99vpxol0Pbn8w-ck&sensor=true"></script>
 </head>
 <body>
 
@@ -45,11 +42,11 @@
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav">
-            <a href="home.html" class="nav-item nav-link">Home</a>
+            <a href="home.html" class="nav-item nav-link active">Home</a>
             <a href="products.html" class="nav-item nav-link">Products</a>
             <a href="geo.html" class="nav-item nav-link">Geolocation</a>
             <a href="extra.html" class="nav-item nav-link">Extra</a>
-            <a href="contactus.html" class="nav-item nav-link  active">Contact Us</a>
+            <a href="contactus.html" class="nav-item nav-link">Contact Us</a>
 
         </div>
         <div class="navbar-nav ml-auto">
@@ -61,70 +58,94 @@
     </div>
 </nav>
 
-
 <div class="container-fluid">
-    <h1>Geolocation Demo</h1>
-    <h3>Your location:</h3>
-    <div>Latitude:<span id="lat"></span></div>
-    <div>Longitude:<span id="long"></span></div>
 
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Geolocaion</h1>
 
-
-
-    <div id="mapholder"></div>
-
-
+        </div>
+    </section>
+    <div id="map"></div>
+    <p><b>Address</b>: <span id="address"></span></p>
+    <p id="error"></p>
     <script>
+        function writeAddressName(latLng) {
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({
+                    "location": latLng
+                },
+                function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK)
+                        document.getElementById("address").innerHTML = results[0].formatted_address;
+                    else
+                        document.getElementById("error").innerHTML += "Unable to retrieve your address" + "<br />";
+                });
+        }
 
-        var x = document.getElementById("demo");
+        function geolocationSuccess(position) {
+            var userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-        window.onload = function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            writeAddressName(userLatLng);
 
-            } else {
-                x.innerHTML = "Geolocation is not supported by this browser.";
+            var myOptions = {
+                zoom : 16,
+                center : userLatLng,
+                mapTypeId : google.maps.MapTypeId.ROADMAP
+            };
+
+            // Draw the map
+            var mapObject = new google.maps.Map(document.getElementById("map"), myOptions);
+            // Place the marker
+            new google.maps.Marker({
+                map: mapObject,
+                position: userLatLng
+            });
+
+
+
+            // Draw a circle around the user position to have an idea of the current localization accuracy
+            var circle = new google.maps.Circle({
+                center: userLatLng,
+                radius: position.coords.accuracy,
+                map: mapObject,
+                fillColor: '#0000FF',
+                fillOpacity: 0.5,
+                strokeColor: '#0000FF',
+                strokeOpacity: 1.0
+            });
+            mapObject.fitBounds(circle.getBounds());
+        }
+
+        function geolocationError(positionError) {
+            document.getElementById("error").innerHTML += "Error: " + positionError.message + "<br />";
+        }
+
+        function geolocateUser() {
+            // If the browser supports the Geolocation API
+            if (navigator.geolocation)
+            {
+                var positionOptions = {
+                    enableHighAccuracy: true,
+                    timeout: 10 * 1000 // 10 seconds
+                };
+                navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
             }
+            else
+                document.getElementById("error").innerHTML += "Your browser doesn't support the Geolocation API";
         }
 
-
-        function showPosition(position) {
-            var latlon = position.coords.latitude + "," + position.coords.longitude;
-
-            var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
-            +latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyDZueJr-73aLd8zLKE99vpxol0Pbn8w-ck";
-
-            document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
-            document.getElementById("lat").innerHTML = position.coords.latitude;
-            document.getElementById("long").innerHTML = position.coords.longitude;
-
-        }
-
-        function showError(error) {
-            switch(error.code) {
-                case error.PERMISSION_DENIED:
-                    x.innerHTML = "User denied the request for Geolocation."
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    x.innerHTML = "Location information is unavailable."
-                    break;
-                case error.TIMEOUT:
-                    x.innerHTML = "The request to get user location timed out."
-                    break;
-                case error.UNKNOWN_ERROR:
-                    x.innerHTML = "An unknown error occurred."
-                    break;
-            }
-        }
-
+        window.onload = geolocateUser;
     </script>
 
-</div>
 
+
+</div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
 
 </body>
 </html>
