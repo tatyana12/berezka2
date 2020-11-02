@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content=" CNIT 133M-Mobile Web  CCSF Products Page spring semester 2020 Yulia Berezina">
+    <meta name="description" content="CNIT 133M-Mobile Web  CCSF Products Page spring semester 2020 Yulia Berezina">
     <title>Products</title>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
     <style>
@@ -19,12 +19,19 @@
             text-align: justify;
             padding:2%;
         }
+
         h1, h3{
             text-align: center;
         }
+        .card-header button{
+            width: 100%;
+        }
+
         img{
             margin: 0 auto;
             display: block;
+            width: 200px;
+            height: auto;
 
         }
 
@@ -62,15 +69,20 @@
         <div class="card-header" id="headingOne">
             <h2>
                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    MOSAIQUE
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
+                        <circle cx="8" cy="4.5" r="1"/>
+                    </svg>
+                    MOSAIC
                 </button>
             </h2>
         </div>
 
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne">
             <div class="card-body">
-                <img src="mosaique.png" width="200" height="auto" class="img-thumbnail" alt="Thumbnail Image">
-                <p>Beautiful colored pyramid for 1 year and older to help your child to develop constructive skills.</p>
+                <img src="mosaique.png" class="img-thumbnail" alt="Thumbnail Image">
+                <p>Beautiful colored mosaic for 1 year and older to help your child to develop constructive skills.</p>
             </div>
         </div>
     </div>
@@ -78,14 +90,19 @@
         <div class="card-header" id="headingTwo">
             <h2 >
                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
+                        <circle cx="8" cy="4.5" r="1"/>
+                    </svg>
                     Teddy Bear
                 </button>
             </h2>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
             <div class="card-body">
-                <img src="teddy.png" width="200" height="auto" class="img-thumbnail" alt="Thumbnail Image">
-                <p>Beautiful colored pyramid for 1 year and older to help your child to develop constructive skills.</p>
+                <img src="teddy.png" class="img-thumbnail" alt="Thumbnail Image">
+                <p>Beautiful Teddy Bear will be a favorite toy for any kid.</p>
             </div>
         </div>
     </div>
@@ -93,13 +110,18 @@
         <div class="card-header" id="headingThree">
             <h2>
                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
+                        <circle cx="8" cy="4.5" r="1"/>
+                    </svg>
                     LEGO
                 </button>
             </h2>
         </div>
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
             <div class="card-body">
-                <img src="lego.png" width="200" height="auto" class="img-thumbnail" alt="Thumbnail Image">
+                <img src="lego.png" class="img-thumbnail" alt="Thumbnail Image">
                 <p>Beautiful colored pyramid for 1 year and older to help your child to develop constructive skills.</p>
             </div>
         </div>
