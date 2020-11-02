@@ -65,7 +65,10 @@
 
         </div>
     </section>
+    <div id="long"></div>
+    <div id="lat"></div>
     <div id="map"></div>
+
     <p><b>Address</b>: <span id="address"></span></p>
     <p id="error"></p>
     <script>
@@ -110,6 +113,8 @@
                 strokeColor: '#0000FF',
                 strokeOpacity: 1.0
             });
+            document.getElementById("lat").innerHTML="Latitude " +position.coords.latitude;
+            document.getElementById("long").innerHTML="Longitude " +position.coords.longitude;
             mapObject.fitBounds(circle.getBounds());
         }
 
@@ -126,6 +131,7 @@
                     timeout: 10 * 1000 // 10 seconds
                 };
                 navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
+
             }
             else
                 document.getElementById("error").innerHTML += "Your browser doesn't support the Geolocation API";
