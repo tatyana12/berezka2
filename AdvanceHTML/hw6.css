@@ -1,0 +1,192 @@
+* { background-color:#C0DEED;
+     margin:0; padding:0;}
+
+body{
+    margin:0;
+    width: 100vw;
+}
+
+h1{
+    position: fixed;
+    top: 10px;
+    left: calc(50vw - 100px/2);
+    width: 100px;
+    background-color: transparent;
+}
+.home_button{
+    position: fixed;
+    bottom: 20px;
+    left: calc(50vw - 100px/2);
+    background-color: transparent;
+}
+
+
+    /*PLANE*/
+#plane{
+    width: 200px;
+    height: 100px;
+    position: fixed;
+    top: 200px;
+    left: calc(50vw - 200px/2);
+
+}
+
+    /*SKY*/
+#sky {
+    position:relative;
+    top:0;left:0;
+    width:300%;
+    height:100%;
+    text-align:center;
+    margin:0;
+    padding:0;
+    background:#C0DEED;
+    background: url(clouds.png) center top repeat-x;
+    padding-top:300px;
+    padding-bottom:10px;
+}
+
+#banner{
+    position: fixed;
+    width: 214px;
+    top: 80vh;
+    left: calc(50vw - 214px/2);
+}
+
+
+/*first letter*/
+#banner::first-letter {
+    color: red;
+    font-weight: bold;
+    display: inline-block;
+
+}
+
+
+    /*Animate sky*/
+
+@keyframes mysky {
+    from {left: 0;}
+    to {left: -150%;}
+}
+@-webkit-keyframes mysky {
+    from {left: 0;}
+    to {left: -150%;}
+}
+
+
+    /*ANIMATE BANNER*/
+
+@keyframes banner {
+
+        0% {
+            left: 0;
+            -webkit-transform: scale(0.2) ;
+            -moz-transform: scale(0.2);
+            -o-transform: scale(0.2);
+            transform:  scale(0.2) perspective(1000px) rotateX(75deg) rotateY(0deg) rotateZ(75deg);
+        }
+        30% {
+            -webkit-transform: scale(0.2) ;
+            -moz-transform: scale(0.2);
+            -o-transform: scale(0.2);
+            transform: scale(0.2) perspective(200px) rotateX(75deg) rotateY(0deg) rotateZ(205deg);
+
+        }
+
+        50% {
+            left: calc(100vw - 214px);
+            transform: perspective(200px) rotateX(75deg) rotateY(20deg) rotateZ(360deg)  rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+        }
+
+        70% {
+            color: darkblue;
+
+
+        }
+
+        100% {
+            left: calc(50vw - 214px/2);
+            color: blue;
+            -webkit-transform: scale(2);
+            -moz-transform: scale(2);
+            -o-transform: scale(2);
+            transform: scale(2);
+
+        }
+    }
+@-webkit-keyframes  banner {
+
+    0% {
+        left: 0;
+        -webkit-transform: scale(0.2) ;
+        -moz-transform: scale(0.2);
+        -o-transform: scale(0.2);
+        transform:  scale(0.2) perspective(1000px) rotateX(75deg) rotateY(0deg) rotateZ(75deg);
+    }
+    30% {
+        -webkit-transform: scale(0.2) ;
+        -moz-transform: scale(0.2);
+        -o-transform: scale(0.2);
+        transform: scale(0.2) perspective(200px) rotateX(75deg) rotateY(0deg) rotateZ(205deg);
+
+    }
+
+    50% {
+        left: calc(100vw - 214px);
+        transform: perspective(200px) rotateX(75deg) rotateY(20deg) rotateZ(360deg)  rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+    }
+
+    70% {
+        color: darkblue;
+
+
+    }
+
+    100% {
+        left: calc(50vw - 214px/2);
+        color: blue;
+        -webkit-transform: scale(2);
+        -moz-transform: scale(2);
+        -o-transform: scale(2);
+        transform: scale(2);
+
+    }
+}
+
+/*STOP ANIMATION */
+
+@media (prefers-reduced-motion: reduce) {
+    #sky{
+        animation: none;
+    }
+    #banner{
+        animation: none;
+    }
+
+}
+@media (prefers-reduced-motion: no-preference) {
+    #sky{
+        -webkit-animation: mysky 60s linear infinite;
+        -moz-animation: mysky 60s linear infinite;
+        -o-animation: mysky 60s linear infinite;
+        animation: mysky 60s linear infinite;
+
+    }
+    #banner{
+        left: 5vw;
+        -webkit-animation: banner 5s linear forwards;
+        -moz-animation: banner 5s linear forwards;
+        -o-animation: banner 5s linear forwards;
+        animation: banner 5s linear forwards;
+    }
+
+}

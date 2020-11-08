@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Shapes</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Yulia Berezina Advanced HTML CSS Shapes homework 6 ">
+    <style>
+        body { font: 1.2em Helvetica, Arial, sans-serif; background-color: beige; }
+
+        .content {max-width: 800px; margin: 10px auto; }
+
+        .house { float: left;
+            shape-outside: url(house.png);
+            shape-margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Homework 6 - Using CSS Shapes</h1>
+<section class="content">
+    <h2>Purple drop floating left</h2>
+    <img src="house.png" alt="house" class="house">
+
+    <p>This is a paragraph that will start on the right side of the purple drop as the purple drop has received the CSS class of drop and that class has the float:left CSS property being applied to it. The idea is that we will modify that class to include CSS shape and you will see that the these two paragraphs will then follow the shape of that purple drop, following the curve of the purple drop instead of just following a rectangular shape of the width and height of the image.</p>
+
+    <p>This is the start of the second paragraph and this paragraph will also follow the float of the image until the end of its height. When the height of the image is achieved, the paragraph will then continue normally starting from the left of the browser and continuing to the right and down.</p>
+
+    </section>
+<div class="home_button">
+    <a href="index.html">Home</a>
+    <a href="assignments.html">Assignments</a>
+</div>
+</body>
+</html>
