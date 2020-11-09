@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $("h1").after("<ul></ul>")
+  $("#sky").after("<ul></ul>")
   $("h2").each(function(i,e){
       $(this).attr("id", "heading_"+i);
       $("ul").append($("<li><a href='#" +$(this).attr("id")+"'/>"+$(this).text()+"</li>"));
