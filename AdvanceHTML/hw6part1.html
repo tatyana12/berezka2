@@ -1,1 +1,60 @@
-<!DOCTYPE html><html lang="en"><head><title>Flying plane</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Yulia Berezina Advanced HTML Homework 6airplane flying with CSS3 animation"><link rel="stylesheet" href="hw6.css"></head><body><p id="sky"><h1>Airline</h1><img src="plane.png" id="plane" alt="cartoon airplane"><p id="banner"> FLY WITH US!WE ARE SAFE!</p><div class="home_button"> <a href="index.html">Home</a> <a href="assignments.html">Assignments</a> <a href="hw6.html">Homework 6</a></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flying plane</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Yulia Berezina Advanced HTML Homework 6airplane flying with CSS3 animation">
+
+    <link rel="stylesheet" href="hw6.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script>
+        $(document).ready(function(){
+            $("#sky").css("animation", "mysky 60s linear infinite");
+            $("#banner").css("animation", "banner 3s linear forwards");
+            $("input:checkbox").click(function() {
+
+                if($(this).is(":checked")){
+                    $("#sky").css("animation", "none");
+                    $("#banner").css("animation", "none");
+
+
+                }else{
+                    $("#sky").css("animation", "mysky 60s linear infinite");
+                    $("#banner").css("animation", "banner 3s linear forwards");
+
+                }
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+
+<div id="sky">
+    <h1>Airline</h1>
+    <div class="toggle">
+        Remove animation?
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+
+    <img src="plane.png" id="plane" alt="cartoon airplane">
+
+
+    <p id="banner">
+        FLY WITH US!WE ARE SAFE!
+    </p>
+
+    <div class="home_button">
+        <a href="index.html">Home</a>
+        <a href="assignments.html">Assignments</a>
+    </div>
+</div>
+</body>
+</html>
