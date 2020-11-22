@@ -9,7 +9,7 @@ const staticAssets=[
     'images/icon-384x384.png',
     'images/icon-512x512.png',
     'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
-    'http://code.jquery.com/jquery-1.7.1.js'
+    'https://code.jquery.com/jquery-1.7.1.js'
 ];
 
 self.addEventListener('install', async event =>{
