@@ -1,0 +1,25 @@
+body {
+    background-color: #edebe9;
+    color: #000000;
+}
+.dropdown{position: relative; }
+.dropdown, .dropdown ul, .dropdown li {margin: 0px; padding: 0; list-style-type: none; width: 150px; text-align: center; cursor: pointer;}
+.dropdown:hover{
+    color: red;
+}
+ul.dropdown>li{
+    font-weight: bold;
+}
+#blue:hover{
+    background-color: blue;
+
+}
+#gold:hover{
+    background-color: gold;
+
+}
+
+
+ul.dropdown ul{
+    display: none;
+}
