@@ -1,5 +1,3 @@
-
-
 window.addEventListener('load', async e =>{
     if('serviceWorker' in navigator){
         try{
