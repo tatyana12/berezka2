@@ -15,16 +15,6 @@ window.addEventListener('load', async e =>{
 
 
 
-
-
-
-
-
-
-
-
-
-
 $('ul.dropdown ul').hide();
 $( "ul.dropdown li" ).hover(
     function(){
