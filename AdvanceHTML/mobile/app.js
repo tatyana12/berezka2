@@ -39,6 +39,12 @@ btnAdd.addEventListener('click', (e) => {
     });
 });
 
+
+window.addEventListener('appinstalled', (evt) => {
+    // Log install to analytics
+    console.log('INSTALL: Success');
+});
+
 $('ul.dropdown ul').hide();
 $( "ul.dropdown li" ).hover(
     function(){
