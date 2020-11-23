@@ -20,12 +20,12 @@ window.addEventListener('beforeinstallprompt', (e) => {
     deferredPrompt = e;
     btnAdd.style.display = "block";
     // Update UI notify the user they can install the PWA
-    showInstallPromotion();
+
 });
 
 btnAdd.addEventListener('click', (e) => {
     // Hide the app provided install promotion
-    hideMyInstallPromotion();
+
     // Show the install prompt
     deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
