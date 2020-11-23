@@ -30,7 +30,7 @@ btnAdd.addEventListener('click', (e) => {
     if (deferredPrompt) {
 
         deferredPrompt.prompt();
-    }
+
 
 
     // Wait for the user to respond to the prompt
@@ -42,6 +42,7 @@ btnAdd.addEventListener('click', (e) => {
         }
         deferredPrompt = null;
     });
+}
 });
 
 
