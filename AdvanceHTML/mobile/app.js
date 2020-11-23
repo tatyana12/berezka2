@@ -35,6 +35,7 @@ btnAdd.addEventListener('click', (e) => {
         } else {
             console.log('User dismissed the install prompt');
         }
+        deferredPrompt = null;
     });
 });
 
