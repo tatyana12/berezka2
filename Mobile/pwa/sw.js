@@ -1,9 +1,10 @@
 const staticAssets=[
     './',
+    './index.html',
     './style.css',
     './app.js',
-    'images/lightblue.jpg',
-    'images/lightgold.jpg',
+    'images/lightblue-large.jpg',
+    'images/lightgold-large.jpg',
     'images/icon-192x192.png',
     'images/icon-256x256.png',
     'images/icon-384x384.png',
