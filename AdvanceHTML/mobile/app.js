@@ -65,9 +65,8 @@ $( "ul.dropdown li" ).hover(
     });
 
 $("#blue").click(function(){
-    $('body').css("background-image", "url('images/lightblue.jpg')");
+    $('html').css("background-image", "url('images/lightblue-large.jpg')");
 });
 $("#gold").click(function(){
-    $('body').css("background-image", "url('images/lightgold.jpg')");
+    $('html').css("background-image", " url('images/lightgold-large.jpg')");
 });
-
