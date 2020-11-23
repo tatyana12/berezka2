@@ -27,7 +27,12 @@ btnAdd.addEventListener('click', (e) => {
     // Hide the app provided install promotion
 
     // Show the install prompt
-    deferredPrompt.prompt();
+    if (deferredPrompt) {
+
+        deferredPrompt.prompt();
+    }
+
+
     // Wait for the user to respond to the prompt
     deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === 'accepted') {
